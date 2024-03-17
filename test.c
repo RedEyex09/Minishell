@@ -1,19 +1,39 @@
-#include <stdio.h>
+
 #include <readline/readline.h>
 #include <readline/history.h>
 #include<libc.h>
+#include <errno.h>
 
 
 int main() {
-    const char *filename = "a.out";
+    pid_t pid, wpid;
+    int status;
 
-    // Check if the file "example.txt" exists and is readable
-    if (access(filename, F_OK | R_OK | W_OK) == 0) {
-        printf("%s exists and is readable\n", filename);
+    pid = fork();
+
+    if (pid == -1) {
+        perror("fork");
+        exit(EXIT_FAILURE);
+    }
+
+    if (pid == 0) {
+        // Child process
+        printf("Child process: PID=%d\n", getpid());
+        sleep(2); // Simulate some work
+        exit(EXIT_SUCCESS);
     } else {
-        perror("Error");
+        // Parent process
+        printf("Parent process: PID=%d, Child PID=%d\n", getpid(), pid);
+
+        // Wait for the specific child process to terminate
+        wpid = waitpid(pid, &status, 0);
+        if (wpid == -1) {
+            perror("waitpid");
+            exit(EXIT_FAILURE);
+        }
+
+        printf("Child process %d terminated with status %d\n", wpid, status);
     }
 
     return 0;
 }
-
