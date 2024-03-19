@@ -4,36 +4,32 @@
 #include<libc.h>
 #include <errno.h>
 
+#include <stdio.h>
+#include <unistd.h>
 
 int main() {
-    pid_t pid, wpid;
-    int status;
-
-    pid = fork();
-
-    if (pid == -1) {
-        perror("fork");
-        exit(EXIT_FAILURE);
+    const char *new_directory = "/Users/zaki";
+    char cwd[1024]; // Assuming the path won't exceed 1024 characters
+    if (getcwd(cwd, sizeof(cwd)) != NULL) {
+        printf("Current working directory: %s\n", cwd);
+    } else {
+        perror("getcwd");
+        return 1;
+    }
+    if (chdir(new_directory) == 0) {
+        printf("Changed directory to: %s\n", new_directory);
+    } else {
+        perror("chdir");
+        return 1;
     }
 
-    if (pid == 0) {
-        // Child process
-        printf("Child process: PID=%d\n", getpid());
-        sleep(2); // Simulate some work
-        exit(EXIT_SUCCESS);
+    if (getcwd(cwd, sizeof(cwd)) != NULL) {
+        printf("Current working directory: %s\n", cwd);
     } else {
-        // Parent process
-        printf("Parent process: PID=%d, Child PID=%d\n", getpid(), pid);
-
-        // Wait for the specific child process to terminate
-        wpid = waitpid(pid, &status, 0);
-        if (wpid == -1) {
-            perror("waitpid");
-            exit(EXIT_FAILURE);
-        }
-
-        printf("Child process %d terminated with status %d\n", wpid, status);
+        perror("getcwd");
+        return 1;
     }
 
     return 0;
 }
+
