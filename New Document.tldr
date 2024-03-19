@@ -66,9 +66,9 @@
 		{
 			"id": "pointer:pointer",
 			"typeName": "pointer",
-			"x": 1264.4037447437227,
-			"y": 5598.257980992578,
-			"lastActivityTimestamp": 1710856521138,
+			"x": 910.1779760298845,
+			"y": 6602.282518881271,
+			"lastActivityTimestamp": 1710862367151,
 			"meta": {}
 		},
 		{
@@ -79,9 +79,9 @@
 			"typeName": "page"
 		},
 		{
-			"x": -159.1874408448919,
-			"y": -4753.594352463331,
-			"z": 0.4395467645333884,
+			"x": -85.7565108783787,
+			"y": -5384.0469399263075,
+			"z": 0.4648382804777825,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -104,7 +104,7 @@
 			"opacityForNextShape": 1,
 			"stylesForNextShape": {
 				"tldraw:geo": "rectangle",
-				"tldraw:color": "light-green",
+				"tldraw:color": "black",
 				"tldraw:size": "m",
 				"tldraw:font": "draw",
 				"tldraw:horizontalAlign": "start"
@@ -122,8 +122,8 @@
 			"screenBounds": {
 				"x": 0,
 				"y": 0,
-				"w": 637.5,
-				"h": 530.8333129882812
+				"w": 622.5,
+				"h": 760.8333129882812
 			},
 			"insets": [
 				false,
@@ -310,8 +310,8 @@
 			"meta": {},
 			"type": "geo",
 			"props": {
-				"w": 212.61561149759652,
-				"h": 5247.482384530887,
+				"w": 212.43112928489427,
+				"h": 6605.353764842794,
 				"geo": "rectangle",
 				"color": "black",
 				"labelColor": "black",
@@ -2063,6 +2063,225 @@
 			},
 			"parentId": "page:page",
 			"index": "b0R",
+			"typeName": "shape"
+		},
+		{
+			"x": 250.8901839816342,
+			"y": 5545.759977247365,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:n-O-UmSOeeNkrdD3qcK8O",
+			"type": "geo",
+			"props": {
+				"w": 1042.0789153112426,
+				"h": 676.076831111202,
+				"geo": "rectangle",
+				"color": "black",
+				"labelColor": "black",
+				"fill": "none",
+				"dash": "draw",
+				"size": "m",
+				"font": "draw",
+				"text": "",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"growY": 0,
+				"url": ""
+			},
+			"parentId": "page:page",
+			"index": "b0S",
+			"typeName": "shape"
+		},
+		{
+			"x": 601.9155230591359,
+			"y": 5716.939453829602,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:kxgtiXXLxSfjyVu8VgQRO",
+			"type": "text",
+			"props": {
+				"color": "red",
+				"size": "m",
+				"w": 513.4443893856137,
+				"text": "-int lstat(const char *pathname, struct stat *buf)<-",
+				"font": "sans",
+				"align": "middle",
+				"autoSize": true,
+				"scale": 0.9200782714567111
+			},
+			"parentId": "page:page",
+			"index": "b0T",
+			"typeName": "shape"
+		},
+		{
+			"x": 467.3227824077012,
+			"y": 5524.803107996814,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:ZvU9J-V9Iz-yH7SOpDd0N",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "m",
+				"w": 920,
+				"text": "\n-the lstat() function is used to retrieve information about a symbolic link or a file. It's similar to the stat() function but differs in behavior when the given path refers to a symbolic link. While stat() follows symbolic links and returns information about the file or directory to which the link points, lstat() retrieves information about the symbolic link itself.",
+				"font": "draw",
+				"align": "middle",
+				"autoSize": false,
+				"scale": 0.8923339320349973
+			},
+			"parentId": "page:page",
+			"index": "b0U",
+			"typeName": "shape"
+		},
+		{
+			"x": 491.8214114964777,
+			"y": 5764.286921849876,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:-ZIHYPs7kOUrSWQeYjtEX",
+			"type": "text",
+			"props": {
+				"color": "light-green",
+				"size": "m",
+				"w": 794.8997192382812,
+				"text": "struct stat {\n    dev_t     st_dev;         /* ID of device containing file */\n    ino_t     st_ino;         /* Inode number */\n    mode_t    st_mode;        /* File type and mode */\n    nlink_t   st_nlink;       /* Number of hard links */\n    uid_t     st_uid;         /* User ID of owner */\n    gid_t     st_gid;         /* Group ID of owner */\n    off_t     st_size;        /* Total size, in bytes */\n    blksize_t st_blksize;     /* Block size for filesystem I/O */\n    blkcnt_t  st_blocks;      /* Number of 512B blocks allocated */\n    time_t    st_atime;       /* Time of last access */\n    time_t    st_mtime;       /* Time of last modification */\n    time_t    st_ctime;       /* Time of last status change */\n};",
+				"font": "draw",
+				"align": "start",
+				"autoSize": true,
+				"scale": 1
+			},
+			"parentId": "page:page",
+			"index": "b0V",
+			"typeName": "shape"
+		},
+		{
+			"x": 307.0326461255586,
+			"y": 5571.40821273654,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:5Vb6DZwcdEgS-fN9w8bls",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "m",
+				"w": 84.30728912353516,
+				"text": "lstat()",
+				"font": "draw",
+				"align": "start",
+				"autoSize": true,
+				"scale": 1
+			},
+			"parentId": "page:page",
+			"index": "b0W",
+			"typeName": "shape"
+		},
+		{
+			"x": 248.5697060560932,
+			"y": 6226.39626842687,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:M4HWEwLzygLmlpu2EdcX7",
+			"type": "geo",
+			"props": {
+				"w": 1042.0789153112426,
+				"h": 676.076831111202,
+				"geo": "rectangle",
+				"color": "black",
+				"labelColor": "black",
+				"fill": "none",
+				"dash": "draw",
+				"size": "m",
+				"font": "draw",
+				"text": "",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"growY": 0,
+				"url": ""
+			},
+			"parentId": "page:page",
+			"index": "b0X",
+			"typeName": "shape"
+		},
+		{
+			"x": 701.7500904512111,
+			"y": 6385.811885477772,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:l6vX4bOrfru1myXrVml4t",
+			"type": "text",
+			"props": {
+				"color": "red",
+				"size": "m",
+				"w": 356.44407285152647,
+				"text": "->int fstat(int fd, struct stat *buf)<-",
+				"font": "sans",
+				"align": "middle",
+				"autoSize": true,
+				"scale": 0.9200782714567111
+			},
+			"parentId": "page:page",
+			"index": "b0Y",
+			"typeName": "shape"
+		},
+		{
+			"x": 471.50540095796396,
+			"y": 6248.544366212556,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:vpPJSbGG6UpEV8Sk14s87",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "m",
+				"w": 920,
+				"text": "-The fstat() function in C is used to retrieve information about an open file referenced by a file descriptor. It provides similar functionality to the stat() function, but instead of operating on a filename, it operates on an open file descriptor.",
+				"font": "draw",
+				"align": "middle",
+				"autoSize": false,
+				"scale": 0.8923339320349973
+			},
+			"parentId": "page:page",
+			"index": "b0Z",
+			"typeName": "shape"
+		},
+		{
+			"x": 310.1631648406432,
+			"y": 6256.148084238092,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:2AAmM_PnnlZTTT0Fy-90g",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "m",
+				"w": 85.88932037353516,
+				"text": "fstat()",
+				"font": "draw",
+				"align": "start",
+				"autoSize": true,
+				"scale": 1
+			},
+			"parentId": "page:page",
+			"index": "b0b",
 			"typeName": "shape"
 		}
 	]

@@ -7,29 +7,38 @@
 #include <stdio.h>
 #include <unistd.h>
 
+#include <stdio.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
+
 int main() {
-    const char *new_directory = "/Users/zaki";
-    char cwd[1024]; // Assuming the path won't exceed 1024 characters
-    if (getcwd(cwd, sizeof(cwd)) != NULL) {
-        printf("Current working directory: %s\n", cwd);
-    } else {
-        perror("getcwd");
-        return 1;
-    }
-    if (chdir(new_directory) == 0) {
-        printf("Changed directory to: %s\n", new_directory);
-    } else {
-        perror("chdir");
+    int fd;
+    struct stat file_info;
+
+    // Open a file
+    fd = open("text.txt", O_RDONLY);
+    if (fd == -1) {
+        perror("open");
         return 1;
     }
 
-    if (getcwd(cwd, sizeof(cwd)) != NULL) {
-        printf("Current working directory: %s\n", cwd);
+    // Retrieve information about the open file
+    if (fstat(fd, &file_info) == 0) {
+        printf("File size: %lld bytes\n", file_info.st_size);
+        printf("File mode: %o\n", file_info.st_mode);
+        // Access other file attributes as needed
     } else {
-        perror("getcwd");
+        perror("fstat");
         return 1;
     }
+
+    // Close the file
+    close(fd);
 
     return 0;
 }
+
+
 
