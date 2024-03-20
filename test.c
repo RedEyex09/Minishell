@@ -14,28 +14,23 @@
 #include <unistd.h>
 
 int main() {
-    int fd;
-    struct stat file_info;
+    // Path to the executable program
+    const char *program_path = "/bin/ls";
+    
+    // Arguments to pass to the program
+    char *const argv[] = { "ls", "-l", NULL };
+    
+    // Environment variables
+    char *const envp[] = { NULL };
 
-    // Open a file
-    fd = open("text.txt", O_RDONLY);
-    if (fd == -1) {
-        perror("open");
+    // Execute the program
+    if (execve(program_path, argv, envp) == -1) {
+        perror("execve");
         return 1;
     }
 
-    // Retrieve information about the open file
-    if (fstat(fd, &file_info) == 0) {
-        printf("File size: %lld bytes\n", file_info.st_size);
-        printf("File mode: %o\n", file_info.st_mode);
-        // Access other file attributes as needed
-    } else {
-        perror("fstat");
-        return 1;
-    }
-
-    // Close the file
-    close(fd);
+    // This code won't be reached if execve is successful
+    printf("This message won't be printed because execve succeeded.\n");
 
     return 0;
 }
