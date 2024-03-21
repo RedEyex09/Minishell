@@ -13,24 +13,34 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-int main() {
-    // Path to the executable program
-    const char *program_path = "/bin/ls";
-    
-    // Arguments to pass to the program
-    char *const argv[] = { "ls", "-l", NULL };
-    
-    // Environment variables
-    char *const envp[] = { NULL };
 
-    // Execute the program
-    if (execve(program_path, argv, envp) == -1) {
-        perror("execve");
+int main() {
+    int fd1, fd2;
+
+    // Open a file
+    fd1 = open("example.txt", O_CREAT | O_RDWR);
+    if (fd1 == -1) {
+        perror("open");
         return 1;
     }
 
-    // This code won't be reached if execve is successful
-    printf("This message won't be printed because execve succeeded.\n");
+    // Duplicate the file descriptor to file descriptor number 10
+    fd2 = dup2(fd1, 10);
+    if (fd2 == -1) {
+        perror("dup2");
+        close(fd1);
+        return 1;
+    }
+
+    printf("File descriptors: %d, %d\n", fd1, fd2);
+
+    // Close the original file descriptor
+    close(fd1);
+
+    // Use the duplicated file descriptor (fd2)...
+
+    // Close the duplicated file descriptor
+    close(fd2);
 
     return 0;
 }

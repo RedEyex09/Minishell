@@ -66,9 +66,9 @@
 		{
 			"id": "pointer:pointer",
 			"typeName": "pointer",
-			"x": 1124.9442128530566,
-			"y": 7411.382170160823,
-			"lastActivityTimestamp": 1710935267359,
+			"x": 542.8214560825693,
+			"y": 7620.077312194057,
+			"lastActivityTimestamp": 1710949226802,
 			"meta": {}
 		},
 		{
@@ -79,8 +79,8 @@
 			"typeName": "page"
 		},
 		{
-			"x": -119.19012562996987,
-			"y": -6774.932126308892,
+			"x": -155.11383482362152,
+			"y": -6813.709302638407,
 			"z": 0.4648382804777825,
 			"meta": {},
 			"id": "camera:page:page",
@@ -89,7 +89,9 @@
 		{
 			"editingShapeId": null,
 			"croppingShapeId": null,
-			"selectedShapeIds": [],
+			"selectedShapeIds": [
+				"shape:kpJlMyopqUB1WN24pFlDZ"
+			],
 			"hoveredShapeId": null,
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
@@ -122,7 +124,7 @@
 			"screenBounds": {
 				"x": 0,
 				"y": 0,
-				"w": 637.5,
+				"w": 635.8333129882812,
 				"h": 530.8333129882812
 			},
 			"insets": [
@@ -310,8 +312,8 @@
 			"meta": {},
 			"type": "geo",
 			"props": {
-				"w": 220.56738573336037,
-				"h": 7381.674742807821,
+				"w": 217.40975272865086,
+				"h": 7444.6188263932,
 				"geo": "rectangle",
 				"color": "black",
 				"labelColor": "black",
@@ -2372,7 +2374,7 @@
 				"color": "black",
 				"size": "m",
 				"w": 920,
-				"text": "\nThe unlink() function in C is used to delete a file from the filesystem. It removes the directory entry associated with the specified filename, thus effectively deleting the file.",
+				"text": "-The unlink() function in C is used to delete a file from the filesystem. It removes the directory entry associated with the specified filename, thus effectively deleting the file.",
 				"font": "draw",
 				"align": "middle",
 				"autoSize": false,
@@ -2415,8 +2417,8 @@
 			"id": "shape:OJjJ4A7gxf0pRduKfaWfg",
 			"type": "geo",
 			"props": {
-				"w": 1046.2271269404216,
-				"h": 525.3884771743549,
+				"w": 1045.1786639735694,
+				"h": 295.13005620957654,
 				"geo": "rectangle",
 				"color": "black",
 				"labelColor": "black",
@@ -2470,7 +2472,7 @@
 				"color": "black",
 				"size": "m",
 				"w": 920,
-				"text": "The execve() function in C is used to execute a program. It is one of the variants of the exec() family of functions in Unix-like operating systems. execve() loads and runs a new program in the current process image, replacing the current program.",
+				"text": "-The execve() function in C is used to execute a program. It is one of the variants of the exec() family of functions in Unix-like operating systems. execve() loads and runs a new program in the current process image, replacing the current program.",
 				"font": "draw",
 				"align": "middle",
 				"autoSize": false,
@@ -2478,6 +2480,127 @@
 			},
 			"parentId": "page:page",
 			"index": "b0k",
+			"typeName": "shape"
+		},
+		{
+			"x": 290.0752727376954,
+			"y": 7187.713719468066,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:VFMMJT9QBW5beoESHmACr",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "m",
+				"w": 106.57942199707031,
+				"text": "execve()",
+				"font": "draw",
+				"align": "start",
+				"autoSize": true,
+				"scale": 1
+			},
+			"parentId": "page:page",
+			"index": "b0l",
+			"typeName": "shape"
+		},
+		{
+			"x": 247.7847703496634,
+			"y": 7450.060630402795,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:G8gvdUC_-Z8jo4qfs14Fh",
+			"type": "geo",
+			"props": {
+				"w": 1045.1786639735694,
+				"h": 295.13005620957654,
+				"geo": "rectangle",
+				"color": "black",
+				"labelColor": "black",
+				"fill": "none",
+				"dash": "draw",
+				"size": "m",
+				"font": "draw",
+				"text": "",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"growY": 0,
+				"url": ""
+			},
+			"parentId": "page:page",
+			"index": "b0m",
+			"typeName": "shape"
+		},
+		{
+			"x": 758.5194527066377,
+			"y": 7575.344042461327,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:kpJlMyopqUB1WN24pFlDZ",
+			"type": "text",
+			"props": {
+				"color": "red",
+				"size": "m",
+				"w": 223.31447376707538,
+				"text": "->int dup(int oldfd)<-",
+				"font": "sans",
+				"align": "middle",
+				"autoSize": true,
+				"scale": 0.9551272789164796
+			},
+			"parentId": "page:page",
+			"index": "b0n",
+			"typeName": "shape"
+		},
+		{
+			"x": 478.59812778575747,
+			"y": 7470.10712222881,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:s9ro_REXEsoUOg4q5T-z4",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "m",
+				"w": 920,
+				"text": "-The dup() function in C is used to duplicate an open file descriptor. It creates a new file descriptor that refers to the same file or pipe as the original descriptor.",
+				"font": "draw",
+				"align": "middle",
+				"autoSize": false,
+				"scale": 0.8641035387607355
+			},
+			"parentId": "page:page",
+			"index": "b0o",
+			"typeName": "shape"
+		},
+		{
+			"x": 317.2954919178463,
+			"y": 7484.834862563337,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:u192ro5H5YtJVwPXZ99tm",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "m",
+				"w": 69.30728912353516,
+				"text": "dup()",
+				"font": "draw",
+				"align": "start",
+				"autoSize": true,
+				"scale": 1
+			},
+			"parentId": "page:page",
+			"index": "b0p",
 			"typeName": "shape"
 		}
 	]
