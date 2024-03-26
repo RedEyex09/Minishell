@@ -45,7 +45,7 @@ void exec_path(t_command **command)
         printf("exec->args ->%s<- \n",exec->args[i]);
         i++;
     }
-    printf("exec_path ->%s<-", exec_path);
+    printf("exec_path ->%s<-\n", exec_path);
     if (execve((const char *)exec_path, (char *const *)exec->args, NULL) == -1)
     {
         perror("Error");
