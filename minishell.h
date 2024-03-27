@@ -13,6 +13,7 @@
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <fcntl.h>
+#include <dirent.h>
 # include "./libft/libft.h"
 
 enum e_state
@@ -75,5 +76,7 @@ void	stack_env(t_elem **elem, char **env);
 // hamza
 void exec_check(t_command **command, char **env);
 void exec_path(t_command **command, char **env);
+void cd_checker(t_command **command);
+void ft_exit_fail(char *str);
 
 #endif

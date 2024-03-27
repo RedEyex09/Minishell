@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   exec.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hel-magh <hel-magh@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/27 13:27:45 by hel-magh          #+#    #+#             */
+/*   Updated: 2024/03/27 14:03:24 by hel-magh         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minishell.h"
 char *get_env_exec(t_command **command, char **env)
 {
@@ -103,7 +115,7 @@ int command_check(t_command **command)
     exec = *command;
     if (!ft_strncmp("cd", exec->args[0], 3)
 		||!ft_strncmp("CD", exec->args[0], 3))
-        return (printf("it's cd\n"), 0);
+        return (cd_checker(command), 0);
     else if (!ft_strncmp("echo", exec->args[0], 5)
 			|| !ft_strncmp("ECHO", exec->args[0], 5))
         return (printf("it's echo\n"), 0);

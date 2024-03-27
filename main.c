@@ -110,7 +110,7 @@ int main(int argc, char **argv, char **env)
                 //     printf ("--\n");
                 //     command = command->next;
                 // }
-             exec_check(&command, env);
+               exec_check(&command, env);
             }
             flag = 0;
         }
