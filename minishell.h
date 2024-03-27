@@ -7,6 +7,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <signal.h>
+# include <limits.h>
 # include <unistd.h>
 # include <sys/wait.h>
 # include <sys/types.h>
@@ -45,6 +46,7 @@ typedef struct s_command
 	char	*redir_out;
 	char	*here_doc;
 	char	*dredir_out;
+	char	*content;
 	int		pipe;
 	int		redir;
 	struct s_command	*next;
@@ -71,6 +73,7 @@ t_command	*lstnew_command(char **agrs, char *cmd);
 void		lstadd_back_command(t_command **lst, t_command *new);
 void	stack_env(t_elem **elem, char **env);
 // hamza
-void exec_check(t_command **command);
+void exec_check(t_command **command, char **env);
+void exec_path(t_command **command, char **env);
 
 #endif
