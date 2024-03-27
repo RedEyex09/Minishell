@@ -6,7 +6,7 @@
 /*   By: hel-magh <hel-magh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 13:27:36 by hel-magh          #+#    #+#             */
-/*   Updated: 2024/03/27 15:57:03 by hel-magh         ###   ########.fr       */
+/*   Updated: 2024/03/27 18:04:52 by hel-magh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,35 @@ void cd_checker(t_command **command)
 {
 	t_command *exec;
 	char *current_directory = NULL;
-    char *path;
+    static char *path;
 	
 	exec = *command;
 	current_directory = (char *)malloc(PATH_MAX);
     if (!current_directory)
         ft_exit_fail("current dir problem_cd");
 	if (getcwd(current_directory, PATH_MAX) == NULL)
-		ft_exit_fail("current dir problem_cd2");
-	if (exec->args[1] != NULL && ft_strncmp(exec->args[1], "/", 2))
+	{
+		if (path)
+		{
+			printf("static : %s\n", path);
+			int i = ft_strlen(path);
+			while(i > 0)
+			{
+				if (path[i] == '/')
+					break ;
+				i--;
+			}
+			if (path[i] == '/') 
+                path[i] = '\0'; 
+			
+		}
+		perror("current dir problem_cd2");
+		free(current_directory);
+		return ;
+	}
+		
+	if (exec->args[1] != NULL && ft_strncmp(exec->args[1], "/", 2)
+	&& ft_strncmp(exec->args[1], "~", 2))
 	{
 		current_directory = ft_strjoin(current_directory, "/");
 		if (!current_directory)
@@ -41,16 +61,18 @@ void cd_checker(t_command **command)
 		if (!path)
 		    ft_exit_fail("Path problem_cd");	
 	}
-	else if (exec->args[1] == NULL)
+	else if (!ft_strncmp(exec->args[1], "~", 2) || exec->args[1] == NULL)
 		path = getenv("HOME"); 
 	else
 		path = "/";
+	int j = ft_strncmp(exec->args[1], "~", 2);
 	if (cd_dir(path))
 	{
 		printf("path changed to %s\n", path);
 		chdir(path);
 	}
 	else
-		printf("Is not a Directory\n");
-	
+		printf("Is not a Directory -> path %s and j = %d\n", path, j);
+	free(current_directory);
 }
+
