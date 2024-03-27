@@ -78,5 +78,6 @@ void exec_check(t_command **command, char **env);
 void exec_path(t_command **command, char **env);
 void cd_checker(t_command **command);
 void ft_exit_fail(char *str);
+char *get_env_exec(t_command **command, char **env);
 
 #endif
