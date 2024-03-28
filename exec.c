@@ -6,7 +6,7 @@
 /*   By: hel-magh <hel-magh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 13:27:45 by hel-magh          #+#    #+#             */
-/*   Updated: 2024/03/27 14:03:24 by hel-magh         ###   ########.fr       */
+/*   Updated: 2024/03/27 22:18:43 by hel-magh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void exec_path(t_command **command, char **env) {
     path_in = get_env_exec(command, env);
     current_directory = (char *)malloc(PATH_MAX);
     if (!current_directory || getcwd(current_directory, PATH_MAX) == NULL)
-        ft_exit_fail("current dir problem");
+        ft_exit_fail("current dir problem_exec");
     path = ft_strjoin(path_in, ":");
     if (!path)
         ft_exit_fail("Path problem");
@@ -122,9 +122,9 @@ int command_check(t_command **command)
     else if (!ft_strncmp("export", exec->args[0], 7)
 			|| !ft_strncmp("EXPORT", exec->args[0], 7))
         return (printf("it's export\n"), 0);
-    else if (!ft_strncmp("pwd", exec->args[0], 4)
-			|| !ft_strncmp("PWD", exec->args[0], 4))
-        return (printf("it's pwd\n"), 0);
+    // else if (!ft_strncmp("pwd", exec->args[0], 4)
+	// 		|| !ft_strncmp("PWD", exec->args[0], 4))
+    //     return (printf("it's pwd\n"), 0);
     else if (!ft_strncmp("unset", exec->args[0], 6)
 			|| !ft_strncmp("UNSET", exec->args[0], 6))
         return (printf("it's unset\n"), 0);
