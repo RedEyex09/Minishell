@@ -39,6 +39,21 @@ enum e_token
 	DREDIR_OUT,
 };
 
+typedef struct s_exec
+{
+	int index;
+	int i;
+	int j;
+	char *name;
+	char *value;
+	char *path_in;
+    char **path_split;
+    char *current_dir;
+    char *path;
+    char *exec_path;
+
+} t_exec;
+
 typedef struct s_command
 {
 	char	*cmd;
@@ -79,5 +94,7 @@ void exec_path(t_command **command, char **env);
 void cd_checker(t_command **command);
 void ft_exit_fail(char *str);
 char *get_env_exec(t_command **command, char **env);
-
+void	ft_free_double(char **str);
+void	ft_exit_fail(char *str);
+int command_check(t_command **command);
 #endif
